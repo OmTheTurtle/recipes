@@ -1,11 +1,10 @@
-FROM rust:1.84.0-slim AS build
+FROM alpine:3.21.2 AS build
 
 WORKDIR /usr/src/myapp
-COPY . .
 
-RUN cargo install --git https://github.com/Zheoni/cooklang-chef/ --tag "v0.10.0" --locked
+COPY . .
 
 EXPOSE 80
 EXPOSE 443
 
-CMD ["chef", "serve", "--host"]
+CMD ["./run.sh"]
