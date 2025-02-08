@@ -4,7 +4,4 @@ WORKDIR /usr/src/myapp
 
 COPY . .
 
-EXPOSE 80
-EXPOSE 443
-
 CMD ["./run.sh"]
